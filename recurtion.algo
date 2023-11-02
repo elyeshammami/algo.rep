@@ -1,0 +1,33 @@
+FUNCTION POLINDROME(word:STRING left,right:INTEGER) : BOOLEAN
+VAR
+    set_declarations
+BEGIN
+IF (left>=right) THEN
+    RETURN true;
+    IF (word[left-word[right]]) THEN
+    left:=left+1;
+    right:=right-1;
+    RETURN POLINDROME(word,left,right);
+    ELSE
+    RETURN false;
+    END_IF
+    END_IF
+    END
+    ALGORITHM recursive
+    VAR
+    word:STRING;
+    left,right:INTEGER;
+    isPALINDROME:BOOLEAN;
+
+BEGIN
+    write("give a word");
+    read("word");
+    left:=0;
+    right:=word.lenght-1;
+    isPALINDROME :=POLINDROME("word,left,right");
+    IF (isPALINDROME=true) THEN
+    write("your word "+word+"is PALINDROME");
+    ELSE
+    write("your word "+word+"isn`t PALINDROME");
+    END_IF
+    END
